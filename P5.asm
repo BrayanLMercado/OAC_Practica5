@@ -1,3 +1,9 @@
+;Nombre: Brayan Lopez Mercado
+;Materia: Organizacion y Arquitectura De Computadoras
+;Fecha: 24/Mar/23
+;Practica 5: Modos De direccionamiento
+
+
 section .data ; Datos inicializados (constantes)
 NL: db 13, 10
 NL_L: equ $-NL
@@ -49,23 +55,37 @@ _start: mov eax,0C2966271h
 
     mov edx,array
     mov dWord [edx],0h
+
+    mov dWord [edx+32],1h
+
+    mov dWord [edx+32],2h
+    
+    mov dWord [edx+32],3h
+    
+    mov dWord [edx+32],4h
+    
+
+    ;Inciso g: comprobar que los valores esten 
+    ;en sus correspondientes direcciones
+    mov edx,array
     mov eax,[edx]
     call printHex
     call salto_linea
-    mov dWord [edx+32],1h
+
+    mov edx,array
     mov eax,[edx+32]
     call printHex
     call salto_linea
-    mov dWord [edx+32],2h
-    mov eax,[edx+32]
+
+    mov eax,[edx]
     call printHex
     call salto_linea
-    mov dWord [edx+32],3h
-    mov eax,[edx+32]
+
+    mov eax,[edx]
     call printHex
     call salto_linea
-    mov dWord [edx+32],4h
-    mov eax,[edx+32]
+
+    mov eax,[edx]
     call printHex
     call salto_linea
 
