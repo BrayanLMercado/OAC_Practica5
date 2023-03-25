@@ -58,11 +58,11 @@ _start: mov eax,0C2966271h
 
     mov dWord [edx+32],1h
 
-    mov dWord [edx+32],2h
+    mov dWord [edx+64],2h
     
-    mov dWord [edx+32],3h
+    mov dWord [edx+96],3h
     
-    mov dWord [edx+32],4h
+    mov dWord [edx+128],4h
     
 
     ;Inciso g: comprobar que los valores esten 
@@ -72,20 +72,19 @@ _start: mov eax,0C2966271h
     call printHex
     call salto_linea
 
-    mov edx,array
     mov eax,[edx+32]
     call printHex
     call salto_linea
 
-    mov eax,[edx]
+    mov eax,[edx+64]
     call printHex
     call salto_linea
 
-    mov eax,[edx]
+    mov eax,[edx+96]
     call printHex
     call salto_linea
 
-    mov eax,[edx]
+    mov eax,[edx+128]
     call printHex
     call salto_linea
 
